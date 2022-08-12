@@ -31,6 +31,13 @@ body {
    min-height: 100vh;
 }
 
+@media (min-width: 768px) {
+   html {
+      scroll-behavior: smooth;
+   }
+}
+
+
 body {
    margin: 0;
    font-size: 18px;
@@ -41,6 +48,10 @@ body {
 img {
    max-width: 100%;
    display: block;
+}
+
+p {
+   line-height: 1.5;
 }
 
 .container {
@@ -243,5 +254,121 @@ img {
       text-transform: uppercase;
       font-size: 3rem;
    }
+}
 
+/*todo Services */
+
+.services {
+   display: grid;
+}
+
+.services__img {
+   background-color: black;
+   width: 100%;
+}
+
+.services__article {
+   background-color: var(--white);
+   text-align: center;
+   padding-block: 3em;
+   display: flex;
+   align-items: center;
+}
+
+.container-90--article {
+   max-width: 32ch;
+}
+
+.services__title {
+   margin-top: 0;
+   font-family: var(--font-family-titles);
+   font-weight: 900;
+   font-size: 2rem;
+   color: var(--very-dark-desaturated-blue)
+}
+
+.services__link {
+   display: block;
+   margin-top: 1.5em;
+   text-transform: uppercase;
+   font-family: var(--font-family-titles);
+   color: var(--very-dark-desaturated-blue);
+   text-decoration-thickness: 2px;
+   text-decoration-style: wavy;
+   text-decoration-color: var(--yellow);
+}
+
+.services__link--pink {
+   text-decoration-color: var(--soft-red);
+}
+
+@media (min-width:768px) {
+   .services {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+         'article1 yellow'
+         'pink article2';
+   }
+
+   .services__article--1 {
+      grid-area: article1;
+   }
+
+   .services__article--2 {
+      grid-area: article2;
+   }
+
+   .services__img {
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .services__img--1 {
+      grid-area: yellow;
+   }
+
+   .services__img--2 {
+      grid-area: pink;
+   }
+}
+
+/*todo Design */
+
+
+
+.design__article {
+   position: relative;
+   text-align: center;
+   color: var(--dark-desaturated-cyan);
+}
+
+.design__img {
+   width: 100%;
+}
+
+.design__textos {
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translatex(-50%);
+   width: 38ch
+}
+
+.design__title {
+   font-family: var(--font-family-titles);
+   font-weight: 900;
+   font-size: 1.5rem;
+}
+
+.design__paragraph {
+   margin-bottom: 0;
+   padding-bottom: 3em;
+}
+
+@media (min-width: 768px) {
+   .design {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
 }
